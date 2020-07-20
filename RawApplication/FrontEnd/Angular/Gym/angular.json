@@ -1,0 +1,128 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "GymAdmin": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/GymAdmin",
+      "sourceRoot": "projects/GymAdmin/src",
+      "prefix": "gym",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/GymAdmin",
+            "index": "projects/GymAdmin/src/index.html",
+            "main": "projects/GymAdmin/src/main.ts",
+            "polyfills": "projects/GymAdmin/src/polyfills.ts",
+            "tsConfig": "projects/GymAdmin/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/GymAdmin/src/favicon.ico",
+              "projects/GymAdmin/src/assets"
+            ],
+            "styles": [
+              "projects/GymAdmin/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/GymAdmin/src/environments/environment.ts",
+                  "with": "projects/GymAdmin/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "GymAdmin:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "GymAdmin:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "GymAdmin:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/GymAdmin/src/test.ts",
+            "polyfills": "projects/GymAdmin/src/polyfills.ts",
+            "tsConfig": "projects/GymAdmin/tsconfig.spec.json",
+            "karmaConfig": "projects/GymAdmin/karma.conf.js",
+            "assets": [
+              "projects/GymAdmin/src/favicon.ico",
+              "projects/GymAdmin/src/assets"
+            ],
+            "styles": [
+              "projects/GymAdmin/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/GymAdmin/tsconfig.app.json",
+              "projects/GymAdmin/tsconfig.spec.json",
+              "projects/GymAdmin/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/GymAdmin/e2e/protractor.conf.js",
+            "devServerTarget": "GymAdmin:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "GymAdmin:serve:production"
+            }
+          }
+        }
+      }
+    }},
+  "defaultProject": "GymAdmin"
+}
