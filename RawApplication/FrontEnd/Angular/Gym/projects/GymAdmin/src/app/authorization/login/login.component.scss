@@ -1,4 +1,5 @@
-$bodyBackground: #17a2b0; //#17a2b0
+$bodyBackground: #17a2b8;
+$backgroundColor: #EAEAEA;
 
 body {
   margin: 0;
@@ -11,7 +12,7 @@ body {
   max-width: 600px;
   height: 320px;
   border: 1px solid #9C9C9C;
-  background-color: #EAEAEA;
+  background-color: $backgroundColor;
 }
 #login .container #login-row #login-column #login-box #login-form {
   padding: 20px;
