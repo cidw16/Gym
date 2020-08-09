@@ -1,0 +1,17 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Roberto",
+      "lastName": "del Cid",
+      "username": "rdelcid",
+      "password": "123456",
+      "isActive": true
+    }
+  ],
+  "loginUser": [
+    {
+      "isValid": true
+    }
+  ]
+}
