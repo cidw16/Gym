@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { LoginRoutingModule } from './login-routing.module';
+import { AuthorizationRoutingModule } from './authorization-routing.module';
 import { LoginComponent } from './login/login.component';
 
 
@@ -9,10 +9,10 @@ import { LoginComponent } from './login/login.component';
   declarations: [LoginComponent],
   imports: [
     CommonModule,
-    LoginRoutingModule
+    AuthorizationRoutingModule
   ],
   exports: [
     LoginComponent
   ]
 })
-export class LoginModule { }
+export class AuthorizationModule { }
