@@ -15,7 +15,7 @@ export class LoginService {
   loginUser(): Observable<ILogin[]> {
     return this.http.get<ILogin[]>(this.loginURL).pipe (
       tap (data => console.log('All' + JSON.stringify(data))),
-      catchError (LoginService.handleError)
+      catchError (this.handleError)
     );
   }
 

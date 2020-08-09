@@ -1,3 +1,3 @@
 export interface ILogin {
-  isValid: boolean;
+  areCredentialsValid: boolean;
 }

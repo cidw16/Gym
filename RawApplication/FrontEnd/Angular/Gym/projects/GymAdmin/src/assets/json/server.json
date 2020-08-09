@@ -9,9 +9,8 @@
       "isActive": true
     }
   ],
-  "loginUser": [
+  "loginUser":
     {
-      "isValid": true
+      "areCredentialsValid": true
     }
-  ]
 }
