@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from './login.service';
 
 @Component({
   selector: 'gym-login',
@@ -10,7 +9,7 @@ export class LoginComponent implements OnInit {
 
   errorMessage: string;
 
-  constructor(private loginService: LoginService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

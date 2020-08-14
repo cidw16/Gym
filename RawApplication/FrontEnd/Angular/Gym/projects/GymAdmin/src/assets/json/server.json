@@ -9,8 +9,10 @@
       "isActive": true
     }
   ],
-  "loginUser":
+  "authenticate":
     {
-      "areCredentialsValid": true
+      "userId": 1,
+      "token": "e1013c28-029b-41fd-9b2c-c3a297f8000e",
+      "role": "admin"
     }
 }
