@@ -7,10 +7,11 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import {RouterModule} from '@angular/router';
-import { MainNavComponent } from './main-nav/main-nav.component';
+import { MainNavComponent } from './components/main-nav/main-nav.component';
+import { FooterComponent } from './components/footer/footer/footer.component';
 
 @NgModule({
-  declarations: [MainNavComponent],
+  declarations: [MainNavComponent, FooterComponent],
   imports: [
     CommonModule,
     LayoutModule,
@@ -22,7 +23,8 @@ import { MainNavComponent } from './main-nav/main-nav.component';
     RouterModule
   ],
   exports: [
-    MainNavComponent
+    MainNavComponent,
+    FooterComponent
   ]
 })
 export class CoreModule { }

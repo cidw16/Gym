@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import {SecurityService} from '../data-services/security/security.service';
-import {UsersService} from '../data-services/users/users.service';
-import {EventsHubService} from '../services/events-hub/events-hub.service';
+import {SecurityService} from '../../data-services/security/security.service';
+import {UsersService} from '../../data-services/users/users.service';
+import {EventsHubService} from '../events-hub/events-hub.service';
 
 @Injectable({
   providedIn: 'root'
