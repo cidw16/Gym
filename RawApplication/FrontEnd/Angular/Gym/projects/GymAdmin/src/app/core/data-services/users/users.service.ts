@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { timeout } from 'rxjs/operators';
-import { CONFIG } from 'src/app/config';
+import {CONFIG} from '../../../config';
 
 @Injectable({
   providedIn: 'root'

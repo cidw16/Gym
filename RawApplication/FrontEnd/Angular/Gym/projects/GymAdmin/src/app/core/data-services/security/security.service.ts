@@ -9,26 +9,25 @@ import { Credentials } from '../../../shared/models/credentials.model';
   providedIn: 'root',
 })
 export class SecurityService {
-  private apiPath = `${CONFIG.apiPath}`;
-  private molinaPath = `${CONFIG.apiAuthPath}/JWT_Auth`;
+  private loginPath = `${CONFIG.apiAuthPath}`;
 
   constructor(private readonly http: HttpClient) {}
 
   public login(credentials: Credentials): Observable<any> {
     return this.http
-      .get(`${this.apiPath}/login`)
+      .get(`${this.loginPath}`)
       .pipe(timeout(CONFIG.timeoutRequest));
   }
 
-  public logout(): Observable<any> {
+  /*public logout(): Observable<any> {
     return this.http
-      .post(`${this.apiPath}/logout`, {})
+      .post(`${this.apiPath}`, {})
       .pipe(timeout(CONFIG.timeoutRequest));
   }
 
   public forgotPassword(email: string): Observable<any> {
-    return this.http.post(`${this.apiPath}/forgotPassword`, {
+    return this.http.post(`${this.apiPath}`, {
       emailAddress: email,
     });
-  }
+  }*/
 }

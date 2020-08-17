@@ -7,4 +7,4 @@ export const CONFIG = {
     dateTime: 'MM/DD/YYYY hh:mm ss'
   },
   timeoutRequest: 6000
-}
+};
