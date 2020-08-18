@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
       this.authenticationService
         .login(this.credentials)
         .then(() => {
-          this.router.navigateByUrl('/dashboard');
+          this.router.navigateByUrl('/welcome');
         })
         .catch((error) => {
           this.errorMsg = error.message;
