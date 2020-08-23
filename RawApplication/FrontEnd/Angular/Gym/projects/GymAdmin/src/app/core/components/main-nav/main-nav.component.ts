@@ -18,4 +18,7 @@ export class MainNavComponent {
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 
+  public  onUsersClick(): void {
+    console.log('user clicked');
+  }
 }

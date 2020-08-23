@@ -2,11 +2,93 @@
   "users": [
     {
       "id": 1,
-      "name": "Roberto",
+      "firstName": "Roberto",
       "lastName": "del Cid",
-      "username": "rdelcid",
+      "userName": "rdelcid",
       "password": "123456",
-      "isActive": true
+      "email": "rober@gmail.com",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "firstName": "Mauricio",
+      "lastName": "Rojas",
+      "userName": "maurojas",
+      "password": "123456",
+      "email": "mau@gmail.com",
+      "role": "admin"
+    },
+    {
+      "id": 3,
+      "firstName": "Rocio",
+      "lastName": "rodriguez",
+      "userName": "rocirod",
+      "password": "123456",
+      "email": "roci@gmail.com",
+      "role": "normal"
+    },
+    {
+      "id": 4,
+      "firstName": "Martin",
+      "lastName": "lutero",
+      "userName": "martlut",
+      "password": "123456",
+      "email": "rober@gmail.com",
+      "role": "normal"
+    },
+    {
+      "id": 5,
+      "firstName": "Maria",
+      "lastName": "rojas",
+      "userName": "mrojas",
+      "password": "123456",
+      "email": "mari@gmail.com",
+      "role": "admin"
+    },
+    {
+      "id": 6,
+      "firstName": "Esteban",
+      "lastName": "chaves",
+      "userName": "rdelcid",
+      "password": "123456",
+      "email": "esteban@gmail.com",
+      "role": "admin"
+    },
+    {
+      "id": 7,
+      "firstName": "Bryan",
+      "lastName": "Calvo",
+      "userName": "bcalvo",
+      "password": "123456",
+      "email": "calvo@gmail.com",
+      "role": "admin"
+    },
+    {
+      "id": 8,
+      "firstName": "Mathias",
+      "lastName": "del Cid",
+      "userName": "mdelcid",
+      "password": "123456",
+      "email": "mathias@gmail.com",
+      "role": "admin"
+    },
+    {
+      "id": 9,
+      "firstName": "Carlos",
+      "lastName": "del Cid",
+      "userName": "rdelcid",
+      "password": "123456",
+      "email": "rober@gmail.com",
+      "role": "admin"
+    },
+    {
+      "id": 10,
+      "firstName": "Luis",
+      "lastName": "gozales",
+      "userName": "luigi",
+      "password": "123456",
+      "email": "luigi@gmail.com",
+      "role": "admin"
     }
   ],
   "authenticate":

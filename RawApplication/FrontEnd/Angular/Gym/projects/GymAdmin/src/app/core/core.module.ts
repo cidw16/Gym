@@ -9,6 +9,9 @@ import { MatListModule } from '@angular/material/list';
 import {RouterModule} from '@angular/router';
 import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { FooterComponent } from './components/footer/footer/footer.component';
+import { UsersModule} from '../modules/users/users.module';
+import { MatDialogModule} from '@angular/material/dialog';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [MainNavComponent, FooterComponent],
@@ -20,11 +23,15 @@ import { FooterComponent } from './components/footer/footer/footer.component';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    RouterModule
+    RouterModule,
+    UsersModule,
+    MatDialogModule,
+    FormsModule
   ],
   exports: [
     MainNavComponent,
-    FooterComponent
+    FooterComponent,
+    UsersModule
   ]
 })
 export class CoreModule { }
