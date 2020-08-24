@@ -12,6 +12,7 @@ import { FooterComponent } from './components/footer/footer/footer.component';
 import { UsersModule} from '../modules/users/users.module';
 import { MatDialogModule} from '@angular/material/dialog';
 import {FormsModule} from '@angular/forms';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [MainNavComponent, FooterComponent],

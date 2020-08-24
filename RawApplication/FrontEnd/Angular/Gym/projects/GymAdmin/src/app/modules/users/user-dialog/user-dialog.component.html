@@ -1,13 +1,20 @@
-<form class="example-form">
+<div>
+  <h2>Add Users</h2>
+</div>
+<form class="example-form" #userForm="ngForm" (ngSubmit)="addUser(userForm)">
 
   <!-- Id -->
   <mat-form-field class="example-full-width">
     <mat-label>Id</mat-label>
-    <input matInput [formControl]="idFormControl" [errorStateMatcher]="matcher"
+    <input matInput
+           name="userId"
+           [formControl]="idFormControl"
+           [errorStateMatcher]="matcher"
+           [(ngModel)]="user.id"
            placeholder="">
     <mat-hint></mat-hint>
     <mat-error *ngIf="idFormControl.hasError('pattern') && !idFormControl.hasError('required')">
-      Please enter a valid email address
+      Value must be numeric
     </mat-error>
     <mat-error *ngIf="idFormControl.hasError('required')">
       Id is <strong>required</strong>
@@ -16,7 +23,9 @@
 
   <mat-form-field class="example-full-width">
     <mat-label>User Name</mat-label>
-    <input matInput [formControl]="userNameFormControl" [errorStateMatcher]="matcher"
+    <input matInput [formControl]="userNameFormControl"
+           [errorStateMatcher]="matcher"
+           [(ngModel)]="user.userName"
            placeholder="">
     <mat-hint></mat-hint>
 
@@ -28,7 +37,9 @@
 
   <mat-form-field class="example-full-width">
     <mat-label>First Name</mat-label>
-    <input matInput [formControl]="firstNameFormControl" [errorStateMatcher]="matcher"
+    <input matInput [formControl]="firstNameFormControl"
+           [errorStateMatcher]="matcher"
+           [(ngModel)]="user.firstName"
            placeholder="">
     <mat-hint></mat-hint>
     <mat-error *ngIf="firstNameFormControl.hasError('required')">
@@ -36,10 +47,27 @@
     </mat-error>
   </mat-form-field>
 
+  <!-- Last email -->
+  <mat-form-field class="example-full-width">
+    <mat-label>Last Name</mat-label>
+    <input matInput
+           [formControl]="lastNameFormControl"
+           [errorStateMatcher]="matcher"
+           [(ngModel)]="user.lastName"
+           placeholder="">
+    <mat-hint></mat-hint>
+    <mat-error *ngIf="lastNameFormControl.hasError('required')">
+      First Name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
   <!-- Email -->
   <mat-form-field class="example-full-width">
     <mat-label>Email</mat-label>
-    <input matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+    <input matInput
+           [formControl]="emailFormControl"
+           [errorStateMatcher]="matcher"
+           [(ngModel)]="user.email"
            placeholder="Ex. pat@example.com">
     <mat-hint></mat-hint>
     <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
@@ -49,4 +77,16 @@
       Email is <strong>required</strong>
     </mat-error>
   </mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Role</mat-label>
+    <mat-select>
+      <mat-option value="admin">Admin</mat-option>
+      <mat-option value="normal">Normal User</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="float-right">
+    <button mat-flat-button color="primary" class="mr-1">Submit</button>
+    <button mat-flat-button color="warn" (click)="onNoClick()">Cancel</button>
+  </div>
 </form>

@@ -3,6 +3,9 @@ import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {UserListComponent} from '../user-list/user-list.component';
 import {ErrorStateMatcher} from '@angular/material/core';
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+import {UsersService} from '../../../core/data-services/users/users.service';
+import {User} from '../../../shared/models/users.model';
+
 
 export interface DialogData {
   animal: string;
@@ -24,6 +27,8 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class UserDialogComponent implements OnInit {
 
+  public user: User = new User();
+
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email,
@@ -38,16 +43,33 @@ export class UserDialogComponent implements OnInit {
   firstNameFormControl = new FormControl('', [
     Validators.required
   ]);
+  lastNameFormControl = new FormControl('', [
+    Validators.required
+  ]);
 
   matcher = new MyErrorStateMatcher();
 
   constructor(
     public dialogRef: MatDialogRef<UserListComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+    @Inject(MAT_DIALOG_DATA) public data: DialogData,
+    private readonly userService: UsersService,
+    ) {}
 
   onNoClick(): void {
     this.dialogRef.close();
   }
+
+  public addUser(form): void {
+    if (!form.valid) {
+      return;
+    }
+    this.userService
+      .addUser(this.user).subscribe(
+      () => {
+        this.dialogRef.close();
+        });
+  }
+
 
   ngOnInit(): void {
   }

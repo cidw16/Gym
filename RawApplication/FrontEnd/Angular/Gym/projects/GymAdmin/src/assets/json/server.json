@@ -89,12 +89,25 @@
       "password": "123456",
       "email": "luigi@gmail.com",
       "role": "admin"
+    },
+    {
+      "id": 11
+    },
+    {
+      "id": 12
+    },
+    {
+      "id": 13
+    },
+    {
+      "id": "345",
+      "userName": "sdfs",
+      "firstName": "sdfsdf"
     }
   ],
-  "authenticate":
-    {
-      "userId": 1,
-      "token": "e1013c28-029b-41fd-9b2c-c3a297f8000e",
-      "role": "admin"
-    }
+  "authenticate": {
+    "userId": 1,
+    "token": "e1013c28-029b-41fd-9b2c-c3a297f8000e",
+    "role": "admin"
+  }
 }
