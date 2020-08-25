@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "GymAdmin"
+  "defaultProject": "GymAdmin",
+  "cli": {
+    "analytics": "2c2460dc-c6b8-426d-9f14-b0a006f966c1"
+  }
 }
