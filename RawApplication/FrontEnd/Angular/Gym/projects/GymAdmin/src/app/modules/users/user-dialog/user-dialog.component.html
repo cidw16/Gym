@@ -1,6 +1,9 @@
-<div>
-  <h2>Add Users</h2>
+<div *ngIf="isUpdate; else add">
+  <h2>Edit Users</h2>
 </div>
+<ng-template #add>
+  <h2>Add Users</h2>
+</ng-template>
 <form class="example-form" #userForm="ngForm" (ngSubmit)="addUser(userForm)">
 
   <!-- Id -->

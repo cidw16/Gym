@@ -23,6 +23,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class UserDialogComponent implements OnInit {
 
   public user: User = new User();
+  public isUpdate = false;
 
   emailFormControl = new FormControl('', [
     Validators.required,
@@ -58,15 +59,27 @@ export class UserDialogComponent implements OnInit {
     if (!form.valid) {
       return;
     }
-    this.userService
-      .addUser(this.user).subscribe(
-      () => {
-        this.dialogRef.close();
+    if (this.isUpdate) {
+      this.userService
+        .editUser(this.user).subscribe(
+        () => {
+          this.dialogRef.close();
         });
+    } else {
+      this.userService
+        .addUser(this.user).subscribe(
+        () => {
+          this.dialogRef.close();
+        });
+    }
   }
-
-
   ngOnInit(): void {
+    if (this.data.userId > 0)
+    {
+      this.isUpdate = true;
+      this.user = this.data.userData;
+      this.idFormControl = new FormControl({value: '', disabled: true});
+    }
   }
 
 }

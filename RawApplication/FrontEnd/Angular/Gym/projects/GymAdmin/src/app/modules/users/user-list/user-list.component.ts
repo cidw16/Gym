@@ -9,6 +9,7 @@ import {DeleteDialogComponent} from '../delete-dialog/delete-dialog.component';
 
 export interface DialogData {
   userId: number;
+  userData: User;
 }
 
 @Component({
@@ -59,10 +60,25 @@ export class UserListComponent implements OnInit {
       }
     );
   }
+
+  editUser(userId: number): void {
+    const userQ = this.userList.filter(function (us) {
+      return us.id == userId;
+    });
+    const dialogRef = this.dialog.open(UserDialogComponent, {
+      width: '400px',
+      data: { userId: userId, userData: userQ[0] }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.getUsersList();
+    });
+  }
+
   openDialog(): void {
     const dialogRef = this.dialog.open(UserDialogComponent, {
       width: '400px',
-      data: {}
+      data: { userId: -1 }
     });
 
     dialogRef.afterClosed().subscribe(result => {

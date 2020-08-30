@@ -33,4 +33,9 @@ export class UsersService {
       .delete(`${this.apiPath}/${userId}`)
       .pipe(timeout(CONFIG.timeoutRequest));
   }
+  public editUser(body: User): Observable<any> {
+    return this.http
+      .put(`${this.apiPath}/${body.id}`, body)
+      .pipe(timeout(CONFIG.timeoutRequest));
+  }
 }
