@@ -5,6 +5,11 @@ import {UsersService} from '../../../core/data-services/users/users.service';
 import {User} from '../../../shared/models/users.model';
 import {MatDialog} from '@angular/material/dialog';
 import {UserDialogComponent} from '../user-dialog/user-dialog.component';
+import {DeleteDialogComponent} from '../delete-dialog/delete-dialog.component';
+
+export interface DialogData {
+  userId: number;
+}
 
 @Component({
   selector: 'gym-user-list',
@@ -13,7 +18,7 @@ import {UserDialogComponent} from '../user-dialog/user-dialog.component';
 })
 export class UserListComponent implements OnInit {
 
-  animal: string;
+  userId: string;
   name: string;
 
   userList: User[];
@@ -32,6 +37,17 @@ export class UserListComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
+  private deleteUser(userId): void {
+    const dialogRef = this.dialog.open(DeleteDialogComponent, {
+      width: '250px',
+      data: { userId: userId }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.getUsersList();
+    });
+  }
+
   private getUsersList(): void {
     this.userService.getUsers().subscribe(
       (result: User[]) => {
@@ -46,12 +62,11 @@ export class UserListComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(UserDialogComponent, {
       width: '400px',
-      data: {name: this.name, animal: this.animal}
+      data: {}
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.animal = result;
+      this.getUsersList();
     });
   }
 }

@@ -28,4 +28,9 @@ export class UsersService {
       .post(`${this.apiPath}`, body)
       .pipe(timeout(CONFIG.timeoutRequest));
   }
+  public deleteUser(userId: number): Observable<any> {
+    return this.http
+      .delete(`${this.apiPath}/${userId}`)
+      .pipe(timeout(CONFIG.timeoutRequest));
+  }
 }

@@ -44,9 +44,9 @@
     </ng-container>
 
     <ng-container matColumnDef="actions">
-      <th mat-header-cell *matHeaderCellDef> Actions </th>
-      <th mat-cell *matCellDef="let row" >
-        <button mat-icon-button color="primary">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <th mat-cell *matCellDef="let element" >
+        <button mat-icon-button color="primary" (click)="deleteUser(element.id)">
           <mat-icon>delete</mat-icon>
         </button>
       </th>

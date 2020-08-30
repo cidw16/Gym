@@ -1,16 +1,11 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
-import {UserListComponent} from '../user-list/user-list.component';
+import {DialogData, UserListComponent} from '../user-list/user-list.component';
 import {ErrorStateMatcher} from '@angular/material/core';
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import {UsersService} from '../../../core/data-services/users/users.service';
 import {User} from '../../../shared/models/users.model';
 
-
-export interface DialogData {
-  animal: string;
-  name: string;
-}
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {

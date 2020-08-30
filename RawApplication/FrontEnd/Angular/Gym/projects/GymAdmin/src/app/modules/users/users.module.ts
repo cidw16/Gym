@@ -14,10 +14,11 @@ import {ErrorStateMatcher, ShowOnDirtyErrorStateMatcher} from '@angular/material
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
+import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 
 
 @NgModule({
-  declarations: [UserListComponent, UserDialogComponent],
+  declarations: [UserListComponent, UserDialogComponent, DeleteDialogComponent],
   imports: [
     CommonModule,
     UsersRoutingModule,
