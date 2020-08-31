@@ -13,6 +13,7 @@ import { UsersModule} from '../modules/users/users.module';
 import { MatDialogModule} from '@angular/material/dialog';
 import {FormsModule} from '@angular/forms';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {ClientsModule} from '../modules/clients/clients.module';
 
 @NgModule({
   declarations: [MainNavComponent, FooterComponent],
@@ -27,7 +28,8 @@ import {MatSnackBar} from '@angular/material/snack-bar';
     RouterModule,
     UsersModule,
     MatDialogModule,
-    FormsModule
+    FormsModule,
+    ClientsModule
   ],
   exports: [
     MainNavComponent,
