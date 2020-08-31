@@ -29,7 +29,6 @@ export class DeleteDialogComponent implements OnInit {
       });
   }
   ngOnInit(): void {
-    ;
   }
 
 }

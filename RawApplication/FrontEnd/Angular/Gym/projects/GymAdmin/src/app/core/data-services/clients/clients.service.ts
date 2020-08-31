@@ -28,9 +28,9 @@ export class ClientsService {
       .post(`${this.apiPath}`, body)
       .pipe(timeout(CONFIG.timeoutRequest));
   }
-  public deleteClient(userId: number): Observable<any> {
+  public deleteClient(clientId: number): Observable<any> {
     return this.http
-      .delete(`${this.apiPath}/${userId}`)
+      .delete(`${this.apiPath}/${clientId}`)
       .pipe(timeout(CONFIG.timeoutRequest));
   }
   public editClient(body: Client): Observable<any> {

@@ -1,0 +1,102 @@
+<div *ngIf="isUpdate; else add">
+  <h2>Edit Client</h2>
+</div>
+<ng-template #add>
+  <h2>Add Client</h2>
+</ng-template>
+<form class="example-form" #userForm="ngForm" (ngSubmit)="addClient(userForm)">
+
+  <!-- Id -->
+  <mat-form-field class="example-full-width">
+    <mat-label>Id</mat-label>
+    <input matInput
+           name="userId"
+           [formControl]="idFormControl"
+           [errorStateMatcher]="matcher"
+           [(ngModel)]="client.id"
+           placeholder="">
+    <mat-hint></mat-hint>
+    <mat-error *ngIf="idFormControl.hasError('pattern') && !idFormControl.hasError('required')">
+      Value must be numeric
+    </mat-error>
+    <mat-error *ngIf="idFormControl.hasError('required')">
+      Id is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>First Name</mat-label>
+    <input matInput [formControl]="firstNameFormControl"
+           [errorStateMatcher]="matcher"
+           [(ngModel)]="client.firstName"
+           placeholder="">
+    <mat-hint></mat-hint>
+    <mat-error *ngIf="firstNameFormControl.hasError('required')">
+      First Name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Last email -->
+  <mat-form-field class="example-full-width">
+    <mat-label>Last Name</mat-label>
+    <input matInput
+           [formControl]="lastNameFormControl"
+           [errorStateMatcher]="matcher"
+           [(ngModel)]="client.lastName"
+           placeholder="">
+    <mat-hint></mat-hint>
+    <mat-error *ngIf="lastNameFormControl.hasError('required')">
+      First Name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Height -->
+  <mat-form-field class="example-full-width">
+    <mat-label>Height</mat-label>
+    <input matInput
+           [formControl]="heightFormControl"
+           [errorStateMatcher]="matcher"
+           [(ngModel)]="client.height"
+           placeholder="">
+    <mat-hint></mat-hint>
+    <mat-error *ngIf="heightFormControl.hasError('required')">
+      Height is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Email -->
+  <mat-form-field class="example-full-width">
+    <mat-label>Email</mat-label>
+    <input matInput
+           [formControl]="emailFormControl"
+           [errorStateMatcher]="matcher"
+           [(ngModel)]="client.email"
+           placeholder="Ex. pat@example.com">
+    <mat-hint></mat-hint>
+    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="emailFormControl.hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Choose a date</mat-label>
+    <input matInput
+           [formControl]="dateOfBirthFormControl"
+           [matDatepicker]="picker"
+           [(ngModel)]="client.dateOfBirth"
+    >
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <mat-error *ngIf="emailFormControl.hasError('required')">
+      Birth date is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <div class="float-right">
+    <button mat-flat-button color="primary" class="mr-1">Submit</button>
+    <button mat-flat-button color="warn" (click)="onNoClick()">Cancel</button>
+  </div>
+</form>

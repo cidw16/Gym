@@ -6,7 +6,6 @@ import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/form
 import {UsersService} from '../../../core/data-services/users/users.service';
 import {User} from '../../../shared/models/users.model';
 
-
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -81,5 +80,4 @@ export class UserDialogComponent implements OnInit {
       this.idFormControl = new FormControl({value: '', disabled: true});
     }
   }
-
 }

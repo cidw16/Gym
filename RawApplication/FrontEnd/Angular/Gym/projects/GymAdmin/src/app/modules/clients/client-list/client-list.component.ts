@@ -2,10 +2,23 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {ClientsService} from '../../../core/data-services/clients/clients.service';
 import {DeleteDialogComponent} from '../../users/delete-dialog/delete-dialog.component';
-import {UserDialogComponent} from '../../users/user-dialog/user-dialog.component';
 import {Client} from '../../../shared/models/clients.model';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
+import {ClientEditDialogComponent} from '../client-edit-dialog/client-edit-dialog.component';
+import {ClientDeleteDialogComponent} from '../client-delete-dialog/client-delete-dialog.component';
+
+export const MY_FORMATS = {
+  parse: {
+    dateInput: 'LL',
+  },
+  display: {
+    dateInput: 'DD/MM/YYYY',
+    monthYearLabel: 'YYYY',
+    dateA11yLabel: 'LL',
+    monthYearA11yLabel: 'YYYY',
+  },
+};
 
 export interface ClientDialogData {
   clientId: number;
@@ -19,7 +32,7 @@ export interface ClientDialogData {
 })
 export class ClientListComponent implements OnInit {
 
-  userId: string;
+  clientId: string;
   name: string;
 
   clientList: Client[];
@@ -38,9 +51,9 @@ export class ClientListComponent implements OnInit {
   }
 
   private deleteClient(clientId): void {
-    const dialogRef = this.dialog.open(DeleteDialogComponent, {
+    const dialogRef = this.dialog.open(ClientDeleteDialogComponent, {
       width: '250px',
-      data: { clientId: clientId }
+      data: { clientId }
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -64,9 +77,9 @@ export class ClientListComponent implements OnInit {
     const clientQ = this.clientList.filter(function (us) {
       return us.id === clientId;
     });
-    const dialogRef = this.dialog.open(UserDialogComponent, {
+    const dialogRef = this.dialog.open(ClientEditDialogComponent, {
       width: '400px',
-      data: { clientId: clientId, userData: clientQ[0] }
+      data: { clientId: clientId, clientData: clientQ[0] }
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -75,9 +88,9 @@ export class ClientListComponent implements OnInit {
   }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(UserDialogComponent, {
+    const dialogRef = this.dialog.open(ClientEditDialogComponent, {
       width: '400px',
-      data: { userId: -1 }
+      data: { clientId: -1 }
     });
 
     dialogRef.afterClosed().subscribe(result => {
