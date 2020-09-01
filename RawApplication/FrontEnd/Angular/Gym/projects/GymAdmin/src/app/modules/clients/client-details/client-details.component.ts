@@ -38,11 +38,9 @@ export class ClientDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
-      this.clientId = params['clientId'];
-      this.getClientMeasuresList(this.clientId);
+      this.name = params['clientName'];
+      this.getClientMeasuresList();
     });
-    this.clientId = +this.route.snapshot.paramMap.get('clientId');
-
     this.dataSource.paginator = this.paginator;
   }
 
@@ -53,11 +51,11 @@ export class ClientDetailsComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.getClientMeasuresList(this.clientId);
+      this.getClientMeasuresList();
     });
   }
 
-  private getClientMeasuresList(clientId: number): void {
+  private getClientMeasuresList(): void {
     this.measureService.getClientMeasures().subscribe(
       (result: ClientMeasures[]) => {
         this.measureList = result;
@@ -79,7 +77,7 @@ export class ClientDetailsComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.getClientMeasuresList(this.clientId);
+      this.getClientMeasuresList();
     });
   }
 
@@ -90,7 +88,7 @@ export class ClientDetailsComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.getClientMeasuresList(this.clientId);
+      this.getClientMeasuresList();
     });
   }
 }

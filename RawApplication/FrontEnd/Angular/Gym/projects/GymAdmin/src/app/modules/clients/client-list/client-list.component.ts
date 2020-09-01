@@ -100,7 +100,7 @@ export class ClientListComponent implements OnInit {
     });
   }
 
-  openClientDetails(clientId: number): void {
-    this.router.navigate(['/clientDetails'], { queryParams: { clientId: clientId } });
+  openClientDetails(clientName: string): void {
+    this.router.navigate(['/clientDetails'], { queryParams: { clientName: clientName } });
   }
 }
