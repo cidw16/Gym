@@ -21,6 +21,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import { DetailsDeleteDialogComponent } from './details-delete-dialog/details-delete-dialog.component';
 import { DetailsEditDialogComponent } from './details-edit-dialog/details-edit-dialog.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [ClientListComponent, ClientDeleteDialogComponent, ClientEditDialogComponent, ClientDetailsComponent, DetailsDeleteDialogComponent, DetailsEditDialogComponent],
@@ -39,7 +40,8 @@ import { DetailsEditDialogComponent } from './details-edit-dialog/details-edit-d
     MatNativeDateModule,
     MatTabsModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    MatExpansionModule
   ],
   providers: [
     MatDatepickerModule,

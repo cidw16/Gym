@@ -62,7 +62,27 @@
   </mat-tab>
   <mat-tab label="Routine">
     <ng-template matTabContent>
-      Content 2
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          Day 1
+        </mat-expansion-panel-header>
+
+        <ng-template matExpansionPanelContent>
+          <p>Burpies</p>
+          <p>Chest press</p>
+        </ng-template>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          Day 2
+        </mat-expansion-panel-header>
+
+        <ng-template matExpansionPanelContent>
+          <p>Burpies</p>
+          <p>Chest press</p>
+          <p>Walk for 30 minutes</p>
+        </ng-template>
+      </mat-expansion-panel>
     </ng-template>
   </mat-tab>
 </mat-tab-group>
