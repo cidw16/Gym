@@ -1,12 +1,12 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {ClientsService} from '../../../core/data-services/clients/clients.service';
-import {DeleteDialogComponent} from '../../users/delete-dialog/delete-dialog.component';
 import {Client} from '../../../shared/models/clients.model';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
 import {ClientEditDialogComponent} from '../client-edit-dialog/client-edit-dialog.component';
 import {ClientDeleteDialogComponent} from '../client-delete-dialog/client-delete-dialog.component';
+import {Router, ActivatedRoute} from '@angular/router';
 
 export const MY_FORMATS = {
   parse: {
@@ -42,7 +42,9 @@ export class ClientListComponent implements OnInit {
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   constructor(
     private readonly clientService: ClientsService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -96,5 +98,9 @@ export class ClientListComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       this.getClientsList();
     });
+  }
+
+  openClientDetails(clientId: number): void {
+    this.router.navigate(['/clientDetails'], { queryParams: { clientId: clientId } });
   }
 }

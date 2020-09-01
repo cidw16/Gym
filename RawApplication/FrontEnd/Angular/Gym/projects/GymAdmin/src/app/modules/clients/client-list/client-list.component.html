@@ -36,7 +36,7 @@
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef> Actions </th>
       <th mat-cell *matCellDef="let element" >
-        <button mat-icon-button color="primary" (click)="deleteClient(element.id)">
+        <button mat-icon-button color="primary" (click)="openClientDetails(element.id)">
           <mat-icon>list</mat-icon>
         </button>
         <button mat-icon-button color="primary" (click)="deleteClient(element.id)">

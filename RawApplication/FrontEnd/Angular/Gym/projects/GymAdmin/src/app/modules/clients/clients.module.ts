@@ -15,9 +15,14 @@ import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatNativeDateModule} from '@angular/material/core';
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
+import { ClientDetailsComponent } from './client-details/client-details.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
+import { DetailsDeleteDialogComponent } from './details-delete-dialog/details-delete-dialog.component';
 
 @NgModule({
-  declarations: [ClientListComponent, ClientDeleteDialogComponent, ClientEditDialogComponent],
+  declarations: [ClientListComponent, ClientDeleteDialogComponent, ClientEditDialogComponent, ClientDetailsComponent, DetailsDeleteDialogComponent],
   imports: [
     CommonModule,
     ClientsRoutingModule,
@@ -30,7 +35,10 @@ import { MomentDateAdapter } from '@angular/material-moment-adapter';
     ReactiveFormsModule,
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatTabsModule,
+    MatGridListModule,
+    MatCardModule
   ],
   providers: [
     MatDatepickerModule,

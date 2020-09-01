@@ -1,4 +1,15 @@
 {
+  "clientMeasures": [
+    {
+      "id": 1,
+      "dateAdded": "31/08/2020",
+      "weight": 60,
+      "bicep": 20,
+      "shoulders": 30,
+      "neck": 25,
+      "chest": 50
+    }
+  ],
   "clients": [
     {
       "id": 1,
@@ -15,6 +26,14 @@
       "email": "sharon.martinex@lasd.com",
       "dateOfBirth": "30/08/1990",
       "height": "1.65"
+    },
+    {
+      "id": "3",
+      "firstName": "Test",
+      "lastName": "test name",
+      "height": "3",
+      "email": "sdfds@sfd.com",
+      "dateOfBirth": "2020-08-26T06:00:00.000Z"
     }
   ],
   "users": [
