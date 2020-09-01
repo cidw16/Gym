@@ -1,0 +1,86 @@
+<div *ngIf="isUpdate; else add">
+  <h2>Edit Client</h2>
+</div>
+<ng-template #add>
+  <h2>Add Client</h2>
+</ng-template>
+<form class="example-form" #userForm="ngForm" (ngSubmit)="addMeasure(userForm)">
+
+  <!-- Id -->
+  <mat-form-field class="example-full-width">
+    <mat-label>Id</mat-label>
+    <input matInput
+           name="userId"
+           [formControl]="idFormControl"
+           [errorStateMatcher]="matcher"
+           [(ngModel)]="measure.id"
+           placeholder="">
+    <mat-hint></mat-hint>
+    <mat-error *ngIf="idFormControl.hasError('pattern') && !idFormControl.hasError('required')">
+      Value must be numeric
+    </mat-error>
+    <mat-error *ngIf="idFormControl.hasError('required')">
+      Id is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Date</mat-label>
+    <input matInput
+           [formControl]="dateAddedFormControl"
+           [matDatepicker]="picker"
+           [(ngModel)]="measure.dateAdded"
+    >
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <mat-error *ngIf="dateAddedFormControl.hasError('required')">
+      Birth date is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Weight</mat-label>
+    <input matInput [formControl]="weightFormControl"
+           [errorStateMatcher]="matcher"
+           [(ngModel)]="measure.weight"
+           placeholder="">
+    <mat-hint></mat-hint>
+    <mat-error *ngIf="weightFormControl.hasError('required')">
+      Weight is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Last email -->
+  <mat-form-field class="example-full-width">
+    <mat-label>Bicep</mat-label>
+    <input matInput
+           [formControl]="bicepFormControl"
+           [errorStateMatcher]="matcher"
+           [(ngModel)]="measure.bicep"
+           placeholder="">
+    <mat-hint></mat-hint>
+    <mat-error *ngIf="bicepFormControl.hasError('required')">
+      Bicep is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Height -->
+  <mat-form-field class="example-full-width">
+    <mat-label>Shoulders</mat-label>
+    <input matInput
+           [formControl]="shouldersFormControl"
+           [errorStateMatcher]="matcher"
+           [(ngModel)]="measure.shoulders"
+           placeholder="">
+    <mat-hint></mat-hint>
+    <mat-error *ngIf="shouldersFormControl.hasError('required')">
+      Shoulders is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+
+  <div class="float-right">
+    <button mat-flat-button color="primary" class="mr-1">Submit</button>
+    <button mat-flat-button color="warn" (click)="onNoClick()">Cancel</button>
+  </div>
+</form>

@@ -2,12 +2,19 @@
   "clientMeasures": [
     {
       "id": 1,
-      "dateAdded": "31/08/2020",
+      "dateAdded": "2020-09-02T06:00:00.000Z",
       "weight": 60,
       "bicep": 20,
       "shoulders": 30,
       "neck": 25,
       "chest": 50
+    },
+    {
+      "id": "2",
+      "dateAdded": "2020-09-01T06:00:00.000Z",
+      "weight": "3",
+      "bicep": "4",
+      "shoulders": "5"
     }
   ],
   "clients": [
@@ -34,6 +41,9 @@
       "height": "3",
       "email": "sdfds@sfd.com",
       "dateOfBirth": "2020-08-26T06:00:00.000Z"
+    },
+    {
+      "id": "p7TvWBw"
     }
   ],
   "users": [

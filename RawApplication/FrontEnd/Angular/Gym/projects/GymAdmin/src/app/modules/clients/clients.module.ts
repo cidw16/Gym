@@ -20,9 +20,10 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import { DetailsDeleteDialogComponent } from './details-delete-dialog/details-delete-dialog.component';
+import { DetailsEditDialogComponent } from './details-edit-dialog/details-edit-dialog.component';
 
 @NgModule({
-  declarations: [ClientListComponent, ClientDeleteDialogComponent, ClientEditDialogComponent, ClientDetailsComponent, DetailsDeleteDialogComponent],
+  declarations: [ClientListComponent, ClientDeleteDialogComponent, ClientEditDialogComponent, ClientDetailsComponent, DetailsDeleteDialogComponent, DetailsEditDialogComponent],
   imports: [
     CommonModule,
     ClientsRoutingModule,

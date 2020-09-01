@@ -5,13 +5,12 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatDialog} from '@angular/material/dialog';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ClientMeasuresService} from '../../../core/data-services/client-measures/client-measures.service';
-import {ClientDeleteDialogComponent} from '../client-delete-dialog/client-delete-dialog.component';
-import {ClientEditDialogComponent} from '../client-edit-dialog/client-edit-dialog.component';
 import {DetailsDeleteDialogComponent} from '../details-delete-dialog/details-delete-dialog.component';
+import {DetailsEditDialogComponent} from '../details-edit-dialog/details-edit-dialog.component';
 
-export interface ClientDialogData {
-  clientId: number;
-  clientData: ClientMeasures;
+export interface ClientMeasureDialogData {
+  measureId: number;
+  measureData: ClientMeasures;
 }
 
 @Component({
@@ -74,7 +73,7 @@ export class ClientDetailsComponent implements OnInit {
     const measuretQ = this.measureList.filter(function (us) {
       return us.id === measureId;
     });
-    const dialogRef = this.dialog.open(ClientEditDialogComponent, {
+    const dialogRef = this.dialog.open(DetailsEditDialogComponent, {
       width: '400px',
       data: { measureId: measureId, measureData: measuretQ[0] }
     });
@@ -85,9 +84,9 @@ export class ClientDetailsComponent implements OnInit {
   }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(ClientEditDialogComponent, {
+    const dialogRef = this.dialog.open(DetailsEditDialogComponent, {
       width: '400px',
-      data: { clientId: -1 }
+      data: { measureId: -1 }
     });
 
     dialogRef.afterClosed().subscribe(result => {
