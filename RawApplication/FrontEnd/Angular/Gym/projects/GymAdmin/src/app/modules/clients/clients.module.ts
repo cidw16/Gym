@@ -22,9 +22,11 @@ import {MatCardModule} from '@angular/material/card';
 import { DetailsDeleteDialogComponent } from './details-delete-dialog/details-delete-dialog.component';
 import { DetailsEditDialogComponent } from './details-edit-dialog/details-edit-dialog.component';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { ClientChartComponent } from './client-chart/client-chart.component';
+import {GoogleChartsModule} from 'angular-google-charts';
 
 @NgModule({
-  declarations: [ClientListComponent, ClientDeleteDialogComponent, ClientEditDialogComponent, ClientDetailsComponent, DetailsDeleteDialogComponent, DetailsEditDialogComponent],
+  declarations: [ClientListComponent, ClientDeleteDialogComponent, ClientEditDialogComponent, ClientDetailsComponent, DetailsDeleteDialogComponent, DetailsEditDialogComponent, ClientChartComponent],
   imports: [
     CommonModule,
     ClientsRoutingModule,
@@ -41,7 +43,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatTabsModule,
     MatGridListModule,
     MatCardModule,
-    MatExpansionModule
+    MatExpansionModule,
+    GoogleChartsModule
   ],
   providers: [
     MatDatepickerModule,

@@ -103,4 +103,7 @@ export class ClientListComponent implements OnInit {
   openClientDetails(clientName: string): void {
     this.router.navigate(['/clientDetails'], { queryParams: { clientName: clientName } });
   }
+  openChartDialog(clientName: string): void {
+    this.router.navigate(['/clientCharts'], { queryParams: { clientName: clientName } });
+  }
 }

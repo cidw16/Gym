@@ -6,5 +6,6 @@ export const CONFIG = {
     shortDate: 'MM/DD/YY',
     dateTime: 'MM/DD/YYYY hh:mm ss'
   },
-  timeoutRequest: 6000
+  timeoutRequest: 6000,
+  storagePrefix: 'gymAdmin'
 };

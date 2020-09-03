@@ -19,15 +19,15 @@ export class SecurityService {
       .pipe(timeout(CONFIG.timeoutRequest));
   }
 
-  /*public logout(): Observable<any> {
+  public logout(): Observable<any> {
     return this.http
-      .post(`${this.apiPath}`, {})
+      .post(`${this.loginPath}`, {})
       .pipe(timeout(CONFIG.timeoutRequest));
   }
 
   public forgotPassword(email: string): Observable<any> {
-    return this.http.post(`${this.apiPath}`, {
+    return this.http.post(`${this.loginPath}`, {
       emailAddress: email,
     });
-  }*/
+  }
 }
