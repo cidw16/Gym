@@ -23,6 +23,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {GoogleChartsModule} from 'angular-google-charts';
 import {MatSelectModule} from '@angular/material/select';
+import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [MainNavComponent, FooterComponent],
@@ -53,7 +54,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatExpansionModule,
     GoogleChartsModule,
     MatOptionModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSnackBarModule
   ],
   exports: [
     MainNavComponent,
@@ -76,7 +78,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatCardModule,
     MatExpansionModule,
     MatOptionModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSnackBarModule
   ]
 })
 export class CoreModule { }

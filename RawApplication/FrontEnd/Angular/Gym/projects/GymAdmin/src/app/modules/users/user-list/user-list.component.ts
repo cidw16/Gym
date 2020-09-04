@@ -6,6 +6,8 @@ import {User} from '../../../shared/models/users.model';
 import {MatDialog} from '@angular/material/dialog';
 import {UserDialogComponent} from '../user-dialog/user-dialog.component';
 import {DeleteDialogComponent} from '../delete-dialog/delete-dialog.component';
+import {CONFIG} from '../../../config';
+import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from '@angular/material/snack-bar';
 
 export interface DialogData {
   userId: number;
@@ -21,6 +23,8 @@ export class UserListComponent implements OnInit {
 
   userId: string;
   name: string;
+  horizontalPosition: MatSnackBarHorizontalPosition = 'center';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
 
   userList: User[];
   displayedColumns: string[] = ['id', 'userName', 'firstName', 'lastName', 'email', 'role', 'actions'];
@@ -30,7 +34,8 @@ export class UserListComponent implements OnInit {
 
   constructor(
     private readonly userService: UsersService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -46,6 +51,12 @@ export class UserListComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       this.getUsersList();
+
+      this.snackBar.open('User deleted', 'close', {
+        duration: CONFIG.snackBarDuration,
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+      });
     });
   }
 
@@ -72,6 +83,12 @@ export class UserListComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       this.getUsersList();
+
+      this.snackBar.open('User updated', 'close', {
+        duration: CONFIG.snackBarDuration,
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+      });
     });
   }
 
@@ -83,6 +100,12 @@ export class UserListComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       this.getUsersList();
+
+      this.snackBar.open('User added', 'close', {
+        duration: CONFIG.snackBarDuration,
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+      });
     });
   }
 }

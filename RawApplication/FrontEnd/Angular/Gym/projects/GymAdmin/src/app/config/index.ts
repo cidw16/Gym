@@ -7,5 +7,6 @@ export const CONFIG = {
     dateTime: 'MM/DD/YYYY hh:mm ss'
   },
   timeoutRequest: 6000,
-  storagePrefix: 'gymAdmin'
+  storagePrefix: 'gymAdmin',
+  snackBarDuration: 3000
 };

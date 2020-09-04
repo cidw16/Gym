@@ -42,7 +42,7 @@ export class ClientEditDialogComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<ClientListComponent>,
     @Inject(MAT_DIALOG_DATA) public data: ClientDialogData,
-    private readonly clientService: ClientsService
+    private readonly clientService: ClientsService,
   ) { }
   onNoClick(): void {
     this.dialogRef.close();

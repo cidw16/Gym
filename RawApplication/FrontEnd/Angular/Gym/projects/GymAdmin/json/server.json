@@ -48,6 +48,14 @@
       "height": "4",
       "email": "test@test.com",
       "dateOfBirth": "2020-09-30T06:00:00.000Z"
+    },
+    {
+      "id": "5",
+      "firstName": "client5",
+      "lastName": "sdf",
+      "height": "5",
+      "email": "werwe@sd",
+      "dateOfBirth": "2020-09-30T06:00:00.000Z"
     }
   ],
   "users": [
@@ -62,9 +70,9 @@
     },
     {
       "id": 2,
-      "firstName": "Mauricio",
+      "firstName": "Abelardo",
       "lastName": "Rojas",
-      "userName": "maurojas",
+      "userName": "abe",
       "password": "123456",
       "email": "mau@gmail.com",
       "role": "admin"
@@ -88,24 +96,6 @@
       "role": "admin"
     },
     {
-      "id": 7,
-      "firstName": "Bryan",
-      "lastName": "Calvo",
-      "userName": "bcalvo",
-      "password": "123456",
-      "email": "calvo@gmail.com",
-      "role": "admin"
-    },
-    {
-      "id": 8,
-      "firstName": "Mathias",
-      "lastName": "del Cid",
-      "userName": "mdelcid",
-      "password": "123456",
-      "email": "mathias@gmail.com",
-      "role": "admin"
-    },
-    {
       "id": 9,
       "firstName": "Carlos",
       "lastName": "del Cid",
@@ -124,19 +114,11 @@
       "role": "admin"
     },
     {
-      "id": "345",
-      "userName": "sdfs",
-      "firstName": "sdfsdf"
-    },
-    {
       "id": "150",
       "userName": "test 2",
       "firstName": "test",
       "lastName": "test",
       "email": "test@test"
-    },
-    {
-      "id": "QUUnun1"
     }
   ],
   "authenticate": {

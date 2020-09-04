@@ -7,6 +7,8 @@ import {MatPaginator} from '@angular/material/paginator';
 import {ClientEditDialogComponent} from '../client-edit-dialog/client-edit-dialog.component';
 import {ClientDeleteDialogComponent} from '../client-delete-dialog/client-delete-dialog.component';
 import {Router, ActivatedRoute} from '@angular/router';
+import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from '@angular/material/snack-bar';
+import {CONFIG} from '../../../config';
 
 export const MY_FORMATS = {
   parse: {
@@ -34,6 +36,8 @@ export class ClientListComponent implements OnInit {
 
   clientId: string;
   name: string;
+  horizontalPosition: MatSnackBarHorizontalPosition = 'center';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
 
   clientList: Client[];
   displayedColumns: string[] = ['id', 'firstName', 'lastName', 'email', 'actions'];
@@ -44,7 +48,8 @@ export class ClientListComponent implements OnInit {
     private readonly clientService: ClientsService,
     public dialog: MatDialog,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -60,6 +65,12 @@ export class ClientListComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       this.getClientsList();
+
+      this.snackBar.open('Client deleted', 'close', {
+        duration: CONFIG.snackBarDuration,
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+      });
     });
   }
 
@@ -86,6 +97,12 @@ export class ClientListComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       this.getClientsList();
+
+      this.snackBar.open('Client updated', 'close', {
+        duration: CONFIG.snackBarDuration,
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+      });
     });
   }
 
@@ -97,6 +114,11 @@ export class ClientListComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       this.getClientsList();
+      this.snackBar.open('Client added', 'close', {
+        duration: CONFIG.snackBarDuration,
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+      });
     });
   }
 
