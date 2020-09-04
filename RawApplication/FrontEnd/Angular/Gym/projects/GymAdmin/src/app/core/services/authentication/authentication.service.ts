@@ -36,7 +36,7 @@ export class AuthenticationService {
     this.securityService.logout();
     this.localStorageService.deleteAll();
     this.eventsHubService.setLoggedIn(false);
-    this.router.navigate(['/']);
+    this.router.navigate(['/login']);
   }
 
   login(credentials): Promise<any> {

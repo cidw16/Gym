@@ -5,6 +5,8 @@ import {MyErrorStateMatcher} from '../../users/user-dialog/user-dialog.component
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {ClientDialogData, ClientListComponent} from '../client-list/client-list.component';
 import {ClientsService} from '../../../core/data-services/clients/clients.service';
+import {CONFIG} from '../../../config';
+import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'gym-client-edit-dialog',
@@ -15,6 +17,8 @@ export class ClientEditDialogComponent implements OnInit {
 
   public client: Client = new Client ();
   public isUpdate = false;
+  horizontalPosition: MatSnackBarHorizontalPosition = 'center';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
 
   heightFormControl = new FormControl('', [
     Validators.required,
@@ -43,6 +47,7 @@ export class ClientEditDialogComponent implements OnInit {
     public dialogRef: MatDialogRef<ClientListComponent>,
     @Inject(MAT_DIALOG_DATA) public data: ClientDialogData,
     private readonly clientService: ClientsService,
+    private snackBar: MatSnackBar
   ) { }
   onNoClick(): void {
     this.dialogRef.close();
@@ -57,12 +62,23 @@ export class ClientEditDialogComponent implements OnInit {
         .editClient(this.client).subscribe(
         () => {
           this.dialogRef.close();
+
+          this.snackBar.open('Client updated', 'close', {
+            duration: CONFIG.snackBarDuration,
+            horizontalPosition: this.horizontalPosition,
+            verticalPosition: this.verticalPosition,
+          });
         });
     } else {
       this.clientService
         .addClient(this.client).subscribe(
         () => {
           this.dialogRef.close();
+          this.snackBar.open('Client added', 'close', {
+            duration: CONFIG.snackBarDuration,
+            horizontalPosition: this.horizontalPosition,
+            verticalPosition: this.verticalPosition,
+          });
         });
     }
   }

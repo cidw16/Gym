@@ -36,8 +36,6 @@ export class ClientListComponent implements OnInit {
 
   clientId: string;
   name: string;
-  horizontalPosition: MatSnackBarHorizontalPosition = 'center';
-  verticalPosition: MatSnackBarVerticalPosition = 'top';
 
   clientList: Client[];
   displayedColumns: string[] = ['id', 'firstName', 'lastName', 'email', 'actions'];
@@ -48,8 +46,7 @@ export class ClientListComponent implements OnInit {
     private readonly clientService: ClientsService,
     public dialog: MatDialog,
     private route: ActivatedRoute,
-    private router: Router,
-    private snackBar: MatSnackBar
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -65,12 +62,6 @@ export class ClientListComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       this.getClientsList();
-
-      this.snackBar.open('Client deleted', 'close', {
-        duration: CONFIG.snackBarDuration,
-        horizontalPosition: this.horizontalPosition,
-        verticalPosition: this.verticalPosition,
-      });
     });
   }
 
@@ -97,12 +88,6 @@ export class ClientListComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       this.getClientsList();
-
-      this.snackBar.open('Client updated', 'close', {
-        duration: CONFIG.snackBarDuration,
-        horizontalPosition: this.horizontalPosition,
-        verticalPosition: this.verticalPosition,
-      });
     });
   }
 
@@ -114,11 +99,6 @@ export class ClientListComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       this.getClientsList();
-      this.snackBar.open('Client added', 'close', {
-        duration: CONFIG.snackBarDuration,
-        horizontalPosition: this.horizontalPosition,
-        verticalPosition: this.verticalPosition,
-      });
     });
   }
 
