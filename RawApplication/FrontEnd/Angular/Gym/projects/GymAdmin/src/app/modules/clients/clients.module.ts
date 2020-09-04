@@ -24,27 +24,23 @@ import { DetailsEditDialogComponent } from './details-edit-dialog/details-edit-d
 import {MatExpansionModule} from '@angular/material/expansion';
 import { ClientChartComponent } from './client-chart/client-chart.component';
 import {GoogleChartsModule} from 'angular-google-charts';
+import {CoreModule} from '../../core/core.module';
+import {SharedModule} from '../../shared/shared.module';
 
 @NgModule({
-  declarations: [ClientListComponent, ClientDeleteDialogComponent, ClientEditDialogComponent, ClientDetailsComponent, DetailsDeleteDialogComponent, DetailsEditDialogComponent, ClientChartComponent],
+  declarations: [
+    ClientListComponent,
+    ClientDeleteDialogComponent,
+    ClientEditDialogComponent,
+    ClientDetailsComponent,
+    DetailsDeleteDialogComponent,
+    DetailsEditDialogComponent,
+    ClientChartComponent],
   imports: [
     CommonModule,
     ClientsRoutingModule,
-    MatTableModule,
-    MatIconModule,
-    MatPaginatorModule,
-    MatButtonModule,
-    FormsModule,
-    MatFormFieldModule,
-    ReactiveFormsModule,
-    MatInputModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatTabsModule,
-    MatGridListModule,
-    MatCardModule,
-    MatExpansionModule,
-    GoogleChartsModule
+    CoreModule,
+    SharedModule
   ],
   providers: [
     MatDatepickerModule,

@@ -15,6 +15,13 @@
       "weight": "3",
       "bicep": "4",
       "shoulders": "5"
+    },
+    {
+      "id": "3",
+      "dateAdded": "2020-09-03T06:00:00.000Z",
+      "weight": "3",
+      "bicep": "5",
+      "shoulders": "6"
     }
   ],
   "clients": [
@@ -35,12 +42,12 @@
       "height": "1.65"
     },
     {
-      "id": "3",
-      "firstName": "Test",
-      "lastName": "test name",
-      "height": "3",
-      "email": "sdfds@sfd.com",
-      "dateOfBirth": "2020-08-26T06:00:00.000Z"
+      "id": "4",
+      "firstName": "test4",
+      "lastName": "test4",
+      "height": "4",
+      "email": "test@test.com",
+      "dateOfBirth": "2020-09-30T06:00:00.000Z"
     }
   ],
   "users": [
@@ -66,7 +73,7 @@
       "id": 3,
       "firstName": "Rocio",
       "lastName": "rodriguez",
-      "userName": "ro",
+      "userName": "rodr",
       "password": "123456",
       "email": "roci@gmail.com",
       "role": "normal"
@@ -75,18 +82,9 @@
       "id": 5,
       "firstName": "Maria",
       "lastName": "rojas",
-      "userName": "mrojas",
+      "userName": "mrojas m",
       "password": "123456",
       "email": "mari@gmail.com",
-      "role": "admin"
-    },
-    {
-      "id": 6,
-      "firstName": "Esteban",
-      "lastName": "chaves",
-      "userName": "rdelcid",
-      "password": "123456",
-      "email": "esteban@gmail.com",
       "role": "admin"
     },
     {
@@ -131,28 +129,14 @@
       "firstName": "sdfsdf"
     },
     {
-      "id": "EqUqWrJ"
+      "id": "150",
+      "userName": "test 2",
+      "firstName": "test",
+      "lastName": "test",
+      "email": "test@test"
     },
     {
-      "id": "19pa2Ru"
-    },
-    {
-      "id": "mzBzVEA"
-    },
-    {
-      "id": "pRAE5sw"
-    },
-    {
-      "id": "SWiEJdO"
-    },
-    {
-      "id": "IzL_MnV"
-    },
-    {
-      "id": "ISILO_J"
-    },
-    {
-      "id": "d03y11z"
+      "id": "QUUnun1"
     }
   ],
   "authenticate": {

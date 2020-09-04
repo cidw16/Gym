@@ -9,11 +9,20 @@ import { MatListModule } from '@angular/material/list';
 import {RouterModule} from '@angular/router';
 import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { FooterComponent } from './components/footer/footer/footer.component';
-import { UsersModule} from '../modules/users/users.module';
 import { MatDialogModule} from '@angular/material/dialog';
-import {FormsModule} from '@angular/forms';
-import {MatSnackBar} from '@angular/material/snack-bar';
-import {ClientsModule} from '../modules/clients/clients.module';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule, MatOptionModule} from '@angular/material/core';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {GoogleChartsModule} from 'angular-google-charts';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [MainNavComponent, FooterComponent],
@@ -26,15 +35,48 @@ import {ClientsModule} from '../modules/clients/clients.module';
     MatIconModule,
     MatListModule,
     RouterModule,
-    UsersModule,
     MatDialogModule,
     FormsModule,
-    ClientsModule
+    MatTableModule,
+    MatIconModule,
+    MatPaginatorModule,
+    MatButtonModule,
+    FormsModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatTabsModule,
+    MatGridListModule,
+    MatCardModule,
+    MatExpansionModule,
+    GoogleChartsModule,
+    MatOptionModule,
+    MatSelectModule
   ],
   exports: [
     MainNavComponent,
     FooterComponent,
-    UsersModule
+    GoogleChartsModule,
+    MatDialogModule,
+    FormsModule,
+    MatTableModule,
+    MatIconModule,
+    MatPaginatorModule,
+    MatButtonModule,
+    FormsModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatTabsModule,
+    MatGridListModule,
+    MatCardModule,
+    MatExpansionModule,
+    MatOptionModule,
+    MatSelectModule
   ]
 })
 export class CoreModule { }

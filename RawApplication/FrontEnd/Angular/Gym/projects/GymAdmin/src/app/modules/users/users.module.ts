@@ -10,11 +10,13 @@ import {MatButtonModule} from '@angular/material/button';
 import { UserDialogComponent } from './user-dialog/user-dialog.component';
 import {MatDialogRef} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {ErrorStateMatcher, ShowOnDirtyErrorStateMatcher} from '@angular/material/core';
+import {ErrorStateMatcher, MatOptionModule, ShowOnDirtyErrorStateMatcher} from '@angular/material/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
+import {CoreModule} from '../../core/core.module';
+import {SharedModule} from '../../shared/shared.module';
 
 
 @NgModule({
@@ -22,15 +24,8 @@ import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
   imports: [
     CommonModule,
     UsersRoutingModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatIconModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    ReactiveFormsModule,
-    MatInputModule,
-    FormsModule,
-    MatSelectModule
+    CoreModule,
+    SharedModule
   ],
   providers: [
     {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}
