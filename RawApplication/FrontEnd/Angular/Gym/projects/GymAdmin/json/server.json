@@ -1,19 +1,10 @@
 {
   "clientMeasures": [
     {
-      "id": 1,
-      "dateAdded": "2020-09-02T06:00:00.000Z",
-      "weight": 60,
-      "bicep": 20,
-      "shoulders": 30,
-      "neck": 25,
-      "chest": 50
-    },
-    {
       "id": "2",
       "dateAdded": "2020-09-01T06:00:00.000Z",
-      "weight": "3",
-      "bicep": "4",
+      "weight": "12",
+      "bicep": "45",
       "shoulders": "5"
     },
     {
@@ -22,17 +13,16 @@
       "weight": "3",
       "bicep": "5",
       "shoulders": "6"
+    },
+    {
+      "id": "4",
+      "dateAdded": "2020-09-02T06:00:00.000Z",
+      "weight": "34",
+      "bicep": "45",
+      "shoulders": "21"
     }
   ],
   "clients": [
-    {
-      "id": 1,
-      "firstName": "Car",
-      "lastName": "Martinez",
-      "email": "carlos.martinex@lasd.com",
-      "dateOfBirth": "30/08/1984",
-      "height": "1.80"
-    },
     {
       "id": 2,
       "firstName": "Sharonh",
@@ -56,6 +46,14 @@
       "height": "5",
       "email": "werwe@sd",
       "dateOfBirth": "2020-09-30T06:00:00.000Z"
+    },
+    {
+      "id": "6",
+      "firstName": "test5",
+      "lastName": "test54",
+      "height": "57",
+      "email": "ddfdf@df.com",
+      "dateOfBirth": "2020-09-23T06:00:00.000Z"
     }
   ],
   "users": [
@@ -87,15 +85,6 @@
       "role": "admin"
     },
     {
-      "id": 9,
-      "firstName": "Carlos",
-      "lastName": "del Cid",
-      "userName": "rdelcid",
-      "password": "123456",
-      "email": "rober@gmail.com",
-      "role": "admin"
-    },
-    {
       "id": 10,
       "firstName": "Luis",
       "lastName": "gozales",
@@ -105,11 +94,11 @@
       "role": "admin"
     },
     {
-      "id": "150",
-      "userName": "test 2",
-      "firstName": "test",
-      "lastName": "test",
-      "email": "test@test"
+      "id": "2",
+      "userName": "rov",
+      "firstName": "Robert",
+      "lastName": "del Cid",
+      "email": "delcid.robertdfo@gmail.com"
     }
   ],
   "authenticate": {
