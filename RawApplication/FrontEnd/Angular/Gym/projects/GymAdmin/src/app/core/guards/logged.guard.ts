@@ -16,7 +16,6 @@ export class LoggedGuard implements CanActivate {
     if (this.authenticationService.isLoggedIn()) {
       return this.router.createUrlTree(['/', 'welcome']);
     }
-
     return true;
   }
 }

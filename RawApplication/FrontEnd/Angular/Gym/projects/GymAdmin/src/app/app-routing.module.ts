@@ -6,9 +6,18 @@ import {LoggedGuard} from './core/guards/logged.guard';
 
 const routes: Routes = [
   { path: '',
+    canActivate: [LoggedGuard],
     loadChildren: (): Promise<any> =>
       import('./modules/authorization/authorization.module').then(
         (module) => module.AuthorizationModule
+      )
+  },
+  {
+    path: 'welcome',
+    canLoad: [AuthGuard],
+    loadChildren: (): Promise<any> =>
+      import('./modules/welcome/welcome.module').then(
+        (module) => module.WelcomeModule
       )
   },
   {

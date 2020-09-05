@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AuthorizationRoutingModule } from './authorization-routing.module';
 import { LoginComponent } from './login/login.component';
 import {FormsModule} from '@angular/forms';
-import { WelcomePageComponent } from './Welcome/welcome-page.component';
+import { WelcomePageComponent } from '../welcome/Welcome/welcome-page.component';
 
 
 @NgModule({
